@@ -1,0 +1,449 @@
+
+/* WARNA UTAMA */
+:root {
+    --teal: #4b7b7d;
+    --teal-dark: #345e61;
+    --mint: #d4e4e1;
+    --light: #eef5f2;
+    --white: #ffffff;
+    --text: #263b3c;
+    --muted: #667879;
+    --border: #d8e5e2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    background: #f7faf9;
+    color: var(--text);
+}
+
+a {
+    color: var(--teal-dark);
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1150px;
+    min-height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+}
+
+.logo span,
+.hero h1 span {
+    color: var(--teal);
+}
+
+#navLinks {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+}
+
+#navLinks a {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#navLinks a:hover {
+    color: var(--teal);
+}
+
+.theme-toggle,
+.menu-toggle {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    color: var(--text);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* BERANDA */
+.hero {
+    padding: 85px 5%;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    align-items: center;
+    gap: 55px;
+    background: linear-gradient(135deg, #f7faf9, #dcebe7);
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.label {
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero h3 {
+    margin: 18px 0 12px;
+}
+
+.hero-text > p:not(.label) {
+    color: var(--muted);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 17px;
+    border: 1px solid var(--teal);
+    border-radius: 9px;
+    background: var(--teal);
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: var(--teal-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--teal-dark);
+}
+
+.profile-card {
+    padding: 28px 20px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(40, 77, 77, 0.09);
+}
+
+.photo {
+    width: 175px;
+    height: 175px;
+    margin: 0 auto 20px;
+    border: 7px solid var(--mint);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--teal);
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.profile-card p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* BAGIAN UMUM */
+.section {
+    padding: 75px 5%;
+}
+
+.section-light {
+    background: var(--light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+}
+
+.card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(40, 77, 77, 0.06);
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.card p + p {
+    margin-top: 12px;
+}
+
+/* PENDIDIKAN */
+.education-list {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    gap: 18px;
+}
+
+.year {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--teal);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.education-item h3 {
+    margin-bottom: 5px;
+}
+
+/* PENGALAMAN DAN KEAHLIAN */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.grid .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 13px 30px rgba(40, 77, 77, 0.13);
+}
+
+.grid h3 {
+    margin-bottom: 8px;
+}
+
+.subheading {
+    max-width: 1150px;
+    margin: 0 auto 18px;
+    font-size: 21px;
+}
+
+.skills-grid {
+    margin-bottom: 35px;
+}
+
+.skill-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--mint);
+    color: var(--teal-dark);
+    font-weight: bold;
+}
+
+/* KONTAK */
+.contact-card {
+    max-width: 750px;
+    margin: auto;
+}
+
+.contact-card p {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+
+.note {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    padding: 24px 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: white;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* MODE GELAP */
+body.dark {
+    --white: #172a2b;
+    --light: #162b2c;
+    --text: #e7f0ee;
+    --muted: #b3c7c3;
+    --border: #304849;
+    --mint: #284647;
+    background: #102021;
+    color: var(--text);
+}
+
+body.dark header,
+body.dark footer,
+body.dark .card,
+body.dark .profile-card,
+body.dark .theme-toggle {
+    background: var(--white);
+    color: var(--text);
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #102021, #1a3637);
+}
+
+body.dark .btn-outline {
+    color: var(--text);
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    #navLinks {
+        gap: 9px;
+    }
+
+    .hero {
+        gap: 25px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .navbar {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding: 12px;
+    }
+
+    #navLinks.open {
+        display: flex;
+    }
+
+    #navLinks a {
+        display: block;
+        padding: 7px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 6%;
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile-card {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* CETAK CV KE PDF */
+@media print {
+    header,
+    .buttons,
+    footer a {
+        display: none !important;
+    }
+
+    body,
+    .hero,
+    .section-light {
+        background: white !important;
+        color: black !important;
+    }
+
+    .section {
+        padding: 20px 0;
+    }
+
+    .card,
+    .profile-card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}
