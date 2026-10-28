@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Muhammad Fathir Dicha Putra</title>
 
-    <style>
-    /* WARNA UTAMA */
+<style>
     :root {
-        --teal: #4b7b7d;
-        --teal-dark: #345e61;
-        --mint: #d4e4e1;
-        --light: #eef5f2;
-        --white: #ffffff;
-        --text: #263b3c;
-        --muted: #667879;
-        --border: #d8e5e2;
+        --bg-body: #121417;
+        --card-bg: #1c1f26;
+        --card-hover: #222630;
+        --text-main: #ffffff;
+        --text-muted: #9ba1b0;
+        --border-color: #2b303c;
+        --accent-red: #f0e9eb;
+        --accent-yellow: #FFC906;
     }
 
     * {
@@ -33,13 +31,17 @@
     body {
         font-family: Arial, sans-serif;
         line-height: 1.7;
-        background: #f7faf9;
-        color: var(--text);
+        background: var(--bg-body);
+        color: var(--text-main);
     }
 
     a {
-        color: var(--teal-dark);
+        color: var(--accent-yellow);
         text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--accent-red);
     }
 
     button {
@@ -51,8 +53,8 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: var(--white);
-        border-bottom: 1px solid var(--border);
+        background: var(--card-bg);
+        border-bottom: 2px solid var(--border-color);
     }
 
     .navbar {
@@ -68,11 +70,13 @@
 
     .logo {
         font-size: 25px;
+        font-weight: bold;
+        color: var(--text-main);
     }
 
     .logo span,
     .hero h1 span {
-        color: var(--teal);
+        color: var(--accent-yellow);
     }
 
     #navLinks {
@@ -83,25 +87,21 @@
     }
 
     #navLinks a {
-        color: var(--muted);
+        color: var(--text-muted);
         font-size: 14px;
         font-weight: bold;
     }
 
     #navLinks a:hover {
-        color: var(--teal);
+        color: var(--accent-yellow);
     }
 
-    .theme-toggle,
     .menu-toggle {
         padding: 8px 12px;
-        border: 1px solid var(--border);
+        border: 1px solid var(--border-color);
         border-radius: 9px;
-        background: white;
-        color: var(--text);
-    }
-
-    .menu-toggle {
+        background: var(--card-bg);
+        color: var(--text-main);
         display: none;
     }
 
@@ -112,7 +112,9 @@
         grid-template-columns: 1.5fr 0.8fr;
         align-items: center;
         gap: 55px;
-        background: linear-gradient(135deg, #f7faf9, #dcebe7);
+        background: linear-gradient(135deg, #121417, #1a1e26);
+        color: var(--text-main);
+        border-bottom: 4px solid var(--accent-yellow);
     }
 
     .hero-text {
@@ -120,7 +122,7 @@
     }
 
     .label {
-        color: var(--teal);
+        color: var(--accent-red);
         font-size: 12px;
         font-weight: bold;
         letter-spacing: 1.5px;
@@ -130,71 +132,45 @@
     .hero h1 {
         font-size: clamp(34px, 5vw, 54px);
         line-height: 1.2;
-    }
-
-    .hero h1 span {
-        display: block;
+        color: var(--text-main);
     }
 
     .hero h3 {
         margin: 18px 0 12px;
+        color: var(--accent-yellow);
     }
 
     .hero-text > p:not(.label) {
-        color: var(--muted);
-    }
-
-    .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 24px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 12px 17px;
-        border: 1px solid var(--teal);
-        border-radius: 9px;
-        background: var(--teal);
-        color: white;
-        font-weight: bold;
-    }
-
-    .btn:hover {
-        background: var(--teal-dark);
-    }
-
-    .btn-outline {
-        background: transparent;
-        color: var(--teal-dark);
+        color: var(--text-muted);
     }
 
     .profile-card {
         padding: 28px 20px;
-        border: 1px solid var(--border);
+        border: 1px solid var(--border-color);
         border-radius: 22px;
-        background: white;
+        background: var(--card-bg);
         text-align: center;
-        box-shadow: 0 10px 28px rgba(40, 77, 77, 0.09);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+        color: var(--text-main);
     }
 
-    .photo {
+    .photo img {
         width: 175px;
         height: 175px;
         margin: 0 auto 20px;
-        border: 7px solid var(--mint);
+        border: 7px solid var(--border-color);
         border-radius: 50%;
         display: grid;
         place-items: center;
-        background: var(--teal);
+        background: var(--card-hover);
         color: white;
         font-size: 45px;
         font-weight: bold;
+        object-fit: cover;
     }
 
     .profile-card p {
-        color: var(--muted);
+        color: var(--text-muted);
         margin-top: 8px;
     }
 
@@ -204,7 +180,7 @@
     }
 
     .section-light {
-        background: var(--light);
+        background: #161920;
     }
 
     .section-title {
@@ -214,18 +190,24 @@
 
     .section-title h2 {
         font-size: 34px;
+        color: var(--text-main);
     }
 
     .card {
         padding: 25px;
-        border: 1px solid var(--border);
+        border: 1px solid var(--border-color);
         border-radius: 16px;
-        background: white;
-        box-shadow: 0 8px 25px rgba(40, 77, 77, 0.06);
+        background: var(--card-bg);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        color: var(--text-main);
+    }
+
+    .card h3 {
+        color: var(--text-main);
     }
 
     .card p {
-        color: var(--muted);
+        color: var(--text-muted);
     }
 
     .card p + p {
@@ -243,13 +225,14 @@
     .year {
         display: block;
         margin-bottom: 7px;
-        color: var(--teal);
+        color: var(--accent-yellow);
         font-size: 14px;
         font-weight: bold;
     }
 
     .education-item h3 {
         margin-bottom: 5px;
+        color: var(--text-main);
     }
 
     /* PENGALAMAN DAN KEAHLIAN */
@@ -261,23 +244,48 @@
         margin: auto;
     }
 
-    .grid .card {
+    .grid .card img {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        margin: 20 auto 20px;
+        border-radius: 15px;
+        display: block;
+    }
+
+    .grid img {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        margin: 20 auto 20px;
+        border-radius: 15px;
+        display: block;
     }
 
     .grid .card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 13px 30px rgba(40, 77, 77, 0.13);
+        box-shadow: 0 13px 30px rgba(0, 0, 0, 0.5);
+        border-color: var(--accent-red);
+    }
+
+    .grid img:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 13px 30px rgba(0, 0, 0, 0.5);
+        border-color: var(--accent-red);
     }
 
     .grid h3 {
         margin-bottom: 8px;
+        color: var(--text-main);
     }
 
     .subheading {
         max-width: 1150px;
         margin: 0 auto 18px;
         font-size: 21px;
+        color: var(--text-main);
     }
 
     .skills-grid {
@@ -291,8 +299,9 @@
         border-radius: 12px;
         display: grid;
         place-items: center;
-        background: var(--mint);
-        color: var(--teal-dark);
+        background: var(--card-hover);
+        border: 1px solid var(--border-color);
+        color: var(--accent-yellow);
         font-weight: bold;
     }
 
@@ -304,13 +313,15 @@
 
     .contact-card p {
         padding: 12px 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-color);
         overflow-wrap: anywhere;
+        color: var(--text-muted);
     }
 
     .note {
         font-size: 13px;
         margin-top: 15px;
+        color: var(--text-muted);
     }
 
     /* FOOTER */
@@ -319,39 +330,10 @@
         display: flex;
         justify-content: space-between;
         gap: 15px;
-        background: white;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
+        background: var(--card-bg);
+        border-top: 2px solid var(--border-color);
+        color: var(--text-muted);
         font-size: 14px;
-    }
-
-    /* MODE GELAP */
-    body.dark {
-        --white: #172a2b;
-        --light: #162b2c;
-        --text: #e7f0ee;
-        --muted: #b3c7c3;
-        --border: #304849;
-        --mint: #284647;
-        background: #102021;
-        color: var(--text);
-    }
-
-    body.dark header,
-    body.dark footer,
-    body.dark .card,
-    body.dark .profile-card,
-    body.dark .theme-toggle {
-        background: var(--white);
-        color: var(--text);
-    }
-
-    body.dark .hero {
-        background: linear-gradient(135deg, #102021, #1a3637);
-    }
-
-    body.dark .btn-outline {
-        color: var(--text);
     }
 
     /* RESPONSIVE HP */
@@ -389,6 +371,10 @@
             align-items: stretch;
             width: 100%;
             padding: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 9px;
+            margin-top: 10px;
         }
 
         #navLinks.open {
@@ -404,10 +390,6 @@
             grid-template-columns: 1fr;
             padding: 55px 6%;
             text-align: center;
-        }
-
-        .buttons {
-            justify-content: center;
         }
 
         .profile-card {
@@ -433,7 +415,6 @@
     /* CETAK CV KE PDF */
     @media print {
         header,
-        .buttons,
         footer a {
             display: none !important;
         }
@@ -455,7 +436,8 @@
             break-inside: avoid;
         }
     }
-    </style>
+</style>
+
 </head>
 
 <body>
@@ -465,12 +447,12 @@
         <h2 class="logo">DICV<span>.</span></h2>
 
         <ul id="navLinks">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#pendidikan">Pendidikan</a></li>
-            <li><a href="#pengalaman">Pengalaman</a></li>
-            <li><a href="#keahlian">Keahlian</a></li>
-            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#HOME">HOME</a></li>
+            <li><a href="#PROFILE">PROFILE</a></li>
+            <li><a href="#EDUCATION">EDUCATION</a></li>
+            <li><a href="#EXPERIENCE">EXPERIENCE</a></li>
+            <li><a href="#SKILLS">SKILLS</a></li>
+            <li><a href="#CONTACT">CONTACT</a></li>
         </ul>
 
     </nav>
@@ -478,7 +460,7 @@
 
 <main>
     <!-- BERANDA -->
-    <section id="beranda" class="hero">
+    <section id="HOME" class="hero">
         <div class="hero-text">
             <p class="label">CV</p>
 
@@ -486,7 +468,7 @@
                 <span>Dicha Putra</span>
             </h1>
 
-            <h3>Mahasiswa Sistem Informasi | WEB DEVELOPPER</h3>
+            <h3>Mahasiswa Sistem Informasi | Web Developper</h3>
 
             <p>
                 Mahasiswa Institut Teknologi Batam yang memiliki minat
@@ -499,7 +481,7 @@
 
         <div class="profile-card">
             <!-- Ganti inisial ini dengan foto asli jika diperlukan -->
-            <div class="photo">MF</div>
+            <div class="photo"><img src="Dicha.jpeg" alt=""></div>
             <h2>Muhammad Fathir Dicha Putra</h2>
             <p>Mahasiswa Sistem Informasi</p>
             <p>Fotografi • Videografi • Teknologi</p>
@@ -507,10 +489,10 @@
     </section>
 
     <!-- PROFIL -->
-    <section id="profil" class="section">
+    <section id="PROFILE" class="section">
         <div class="section-title">
-            <p class="label">TENTANG SAYA</p>
-            <h2>Profil Saya</h2>
+            <p class="label">ABOUT ME</p>
+            <h2>MY PROFILE</h2>
         </div>
 
         <div class="card">
@@ -536,10 +518,10 @@
     </section>
 
     <!-- PENDIDIKAN -->
-    <section id="pendidikan" class="section section-light">
+    <section id="EDUCATION" class="section section-light">
         <div class="section-title">
-            <p class="label">RIWAYAT AKADEMIK</p>
-            <h2>Pendidikan</h2>
+            <p class="label">ACADEMIC HISTORY</p>
+            <h2>MY EDUCATION</h2>
         </div>
 
         <div class="education-list">
@@ -567,35 +549,27 @@
     <section id="pengalaman" class="section">
         <div class="section-title">
             <p class="label">ORGANISASI DAN KEGIATAN</p>
-            <h2>Pengalaman</h2>
+            <h2>MY EXPERIENCE</h2>
         </div>
 
         <div class="grid">
 
             <div class="card">
+                <img src="jurnalistik.jpg" alt="">
                 <span class="year">2023/2024</span>
                 <h3>Anggota Jurnalistik</h3>
                 <p>Divisi Reporter.</p>
             </div>
 
-            <div class="card">
-                <span class="year">2024/2025</span>
-                <h3>Koordinator Jurnalistik</h3>
-                <p>Divisi Reporter.</p>
-            </div>
 
             <div class="card">
-                <span class="year">2024/2025</span>
-                <h3>Anggota Jurnalistik</h3>
-                <p>Divisi Dokumentasi.</p>
-            </div>
-
-            <div class="card">
+                <img src="proyek10.jpeg" alt="">
                 <h3>Proyek P5 Kelas 10</h3>
                 <p>Dokumentasi proyek Gaya Hidup Berkelanjutan.</p>
             </div>
 
             <div class="card">
+                <img src="calonketos.JPG" alt="">
                 <h3>Proyek P5 Kelas 11</h3>
                 <p>
                     Dokumentasi proyek Demokrasi dan pemilihan
@@ -604,6 +578,7 @@
             </div>
 
             <div class="card">
+                <img src="Proyek12.jpg" alt="">
                 <h3>Proyek P5 Kelas 12</h3>
                 <p>
                     Dokumentasi Permainan Tradisional Melayu
@@ -612,6 +587,7 @@
             </div>
 
             <div class="card">
+                <img src="Literasi.jpg" alt="">
                 <h3>Dokumentasi Literasi Digital</h3>
                 <p>
                     Dokumentasi proyek kepala sekolah
@@ -620,19 +596,43 @@
             </div>
 
             <div class="card">
+                <img src="fls2n.jpg" alt="">
                 <h3>Lomba Fotografi FLS2N</h3>
                 <p>Peserta lomba fotografi tingkat kota.</p>
             </div>
 
             <div class="card">
+                <img src="17agts.JPG" alt="">
                 <span class="year">17 Agustus 2023</span>
                 <h3>Dokumentasi Upacara Kemerdekaan</h3>
                 <p>Dokumentasi jurnalistik kegiatan upacara.</p>
             </div>
 
             <div class="card">
+                <img src="profileeskul.jpeg" alt="">
                 <h3>Video Profil Ekstrakurikuler</h3>
                 <p>Membuat video profil ekstrakurikuler jurnalistik.</p>
+            </div>
+
+            <div class="card">
+                <img src="hmsi.jpg" alt="">
+                <span class="year">2025/2026</span>
+                <h3>Anggota HMSI</h3>
+                <p>Divisi Media</p>
+            </div>
+
+            <div class="card">
+                <img src="unity.jpg" alt="">
+                <span class="year">2026</span>
+                <h3>Wakadiv Unity Fest</h3>
+                <p>Divisi G-Force</p>
+            </div>
+
+            <div class="card">
+                <img src="gtis.jpg" alt="">
+                <span class="year">2025</span>
+                <h3>Anggota GTIS</h3>
+                <p>Divisi Perlengkapan</p>
             </div>
 
         </div>
@@ -641,11 +641,10 @@
     <!-- KEAHLIAN -->
     <section id="keahlian" class="section section-light">
         <div class="section-title">
-            <p class="label">KEMAMPUAN SAYA</p>
-            <h2>Keahlian</h2>
+            <h2>SKILLS AND TOOLS</h2>
         </div>
 
-        <h3 class="subheading">Aplikasi dan Teknologi</h3>
+        <h3 class="subheading">APPLICATION</h3>
 
         <div class="grid skills-grid">
             <div class="card skill-card">
@@ -685,31 +684,53 @@
             </div>
         </div>
 
-        <h3 class="subheading">Keahlian Kreatif</h3>
+        <h3 class="subheading">MEDIA CREATIVE</h3>
 
         <div class="grid">
-            <div class="card">
-                <h3>Fotografi</h3>
-                <p>Mengambil foto objek dan pemandangan.</p>
+            <div>
+                <img src="Hajilane.JPG" alt="">
             </div>
 
-            <div class="card">
-                <h3>Videografi</h3>
-                <p>Merekam video dan membuat video profil.</p>
+            <div>
+                <img src="street.JPG" alt="">
             </div>
 
-            <div class="card">
-                <h3>Dokumentasi Jurnalistik</h3>
-                <p>Mendokumentasikan kegiatan dan acara.</p>
+            <div>
+                <img src="bus.JPG" alt="">
             </div>
+
+            <div>
+                <img src="02.JPG" alt="">
+            </div>
+
+             <div>
+                <img src="02.JPG" alt="">
+            </div>
+
+             <div>
+                <img src="03.JPG" alt="">
+            </div>
+
+             <div>
+                <img src="04.JPG" alt="">
+            </div>
+
+             <div>
+                <img src="17.JPG" alt="">
+            </div>
+
+             <div>
+                <img src="litdig.JPG" alt="">
+            </div>
+
         </div>
     </section>
 
     <!-- KONTAK -->
     <section id="kontak" class="section">
         <div class="section-title">
-            <p class="label">MARI TERHUBUNG</p>
-            <h2>Kontak</h2>
+            <p class="label">MY SOCIAL</p>
+            <h2>CONTACT</h2>
         </div>
 
         <div class="card contact-card">
@@ -738,8 +759,8 @@
 </main>
 
 <footer>
-    <p>© <span id="currentYear"></span> Muhammad Fathir Dicha Putra</p>
-    <a href="#beranda">Kembali ke atas ↑</a> 
+    <p>© <span id="currentYear"></span> Muhammad Fathir Dicha Putra | PETRONAS</p>
+    <a href="#HOME">Kembali ke atas ↑</a> 
 </footer>
 
 </body>
